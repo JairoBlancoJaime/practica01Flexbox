@@ -1,0 +1,163 @@
+/*** Hacemos que todas las feuntes sean blancas ***/
+* {
+    color: white;
+}
+
+
+/*** Quitamos los margenes y establecemos el color del fondo del body ***/
+body {
+    margin: 0;
+    background: linear-gradient(to right, #ff5e62, #ff9966);
+}
+
+
+#container {
+
+    /*** Hacemos que mediante flex-box y el gap, añadamos unos margenes entre los hijos  ***/
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    /*** Damos color al fondo del contenedor ***/
+    background-color: white;
+
+    /*** Establecemos una media-query para centrar la pagina en escritorio, con el tamaño adecuado y con los bordes necesarios ***/
+    @media (min-width: 768px) {
+        
+        margin: 0 auto;
+        max-width: 1000px;
+        padding: 2rem;
+
+    }
+}
+
+
+header {
+
+    /*** Hacemos que el header se coloque en forma de columna en modo movil y se quede todo centrado ***/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /*** Ponemos el color del fondo **/
+    background-color: #6699ff;
+
+    @media (min-width: 768px) {
+        
+        /*** Cambiamos el formato de columna al formato de fila y separamos el h1 del nav ***/
+        flex-direction: row;
+        justify-content: space-between;
+
+        /***  Separamos un poco el h1 y el nav para que no esten nen el borde ***/
+        padding-inline: 1rem;
+
+    }
+}
+
+
+header ul {
+
+    /*** Hacemos que la lista se coloque en forma de fila ***/
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+/*** Quitamos los estilos de todo el li y a del header ***/
+header li {
+    list-style: none;
+    padding-inline: 0.3rem;
+    a {
+        text-decoration: none;
+    }
+}
+
+
+main {
+    
+    /*** Para la vista movil, colocamos el aside antes que los servicios ***/
+    display: flex;
+    flex-direction: column-reverse;
+
+    /*** Para la vista escritorio, lo cambiamos a fila y colocamos la separacion ***/
+    @media (min-width: 768px) {
+        
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+}
+
+
+/*** Centramos los textos h2 ***/
+h2 {
+    text-align: center;
+}
+
+
+#Services {
+
+    /*** Colocamos los servicios en fila con flexbox ***/
+    display: flex;
+    flex-direction: row;
+
+    /*** Hacemos que en modo escritorio, ocupe un 60% y alinea el hijo arriba del contenedor ***/
+    @media (min-width: 768px) {
+        
+        align-items: flex-start;
+        flex-basis: 60%;
+
+    }
+}
+
+
+aside {
+
+    /*** Ponemos el color del fondo ***/
+    background-color: #6699ff;
+
+
+    /*** Hacemos que en modo escritorio, ocupe el restante con el espacio del 1rem ***/
+    @media (min-width: 768px) {
+        
+        flex-basis: calc(40% - 1rem);
+
+    }
+}
+
+
+/*** Hacemos que lodos los servicios ocupen lo mismo ***/
+.section {
+
+    flex-grow: 1;
+
+}
+
+/*** Ponemos el color del fondo de los sections ***/
+#section1 {
+    background-color: #f44;
+}
+
+#section2 {
+    background-color: #a0a;
+}
+
+#section3 {
+    background-color: #25c;
+}
+
+
+footer {
+    
+    /*** Usamos el display flex y alineamos al centro del cuadro ***/
+    display: flex;
+    justify-content: center;
+
+    /*** Ponemos un margen para el footer ***/
+    padding: 2rem;
+
+    /*** Ponemos el color del fondo ***/
+    background-color: #a0a;
+
+}
